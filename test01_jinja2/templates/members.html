@@ -1,0 +1,39 @@
+<!-- templates/members.html 파일 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>members.html</title>
+</head>
+<body>
+    <div class="container">
+        <h1>회원목록</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in list %}
+                <tr>
+                    <td>{{ item["num"] }}</td>
+                    <td>{{ item["name"] }}</td>
+                    <td>{{ item["addr"] }}</td>
+                </tr>
+                <!-- 이렇게 참조도 가능하다 jinja2 에서만 -->
+                <tr>
+                    <td>{{ item.num }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.addr }}</td>
+                </tr>
+            {% endfor %}
+               
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
